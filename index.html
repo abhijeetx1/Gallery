@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+</head>
+<body>
+    <div class="gallery-wrap">
+        <img src="back.png" id="backBtn">
+       
+
+            <div class="gallery">
+                <div>
+                    <span><img src="CHB_0582.JPG" ></span>
+                    <span><img src="CHB_0583.JPG" ></span>
+                    <span><img src="CHB_0584.JPG" ></span>
+                </div>
+            
+                <div>
+                    <span><img src="CHB_0585.JPG" ></span>
+                    <span><img src="CHB_0595.JPG" ></span>
+                    <span><img src="CHB_0596.JPG" ></span>
+                </div>
+            
+                <div>
+                    <span><img src="CHB_0597.JPG" ></span>
+                    <span><img src="CHB_0582.JPG" ></span>
+                    <span><img src="CHB_0598.JPG" ></span>
+                </div>
+
+                <div>
+                    <span><img src="image-1.png" ></span>
+                    <span><img src="image-2.png" ></span>
+                    <span><img src="CHB_0598.JPG" ></span>
+                </div>
+            
+            </div>
+
+
+        <img src="next.png" id="nextBtn">
+
+    </div>
+
+<script>
+    let scrollContainer = document.querySelector(".gallery");
+    let backBtn = document.getElementById("backBtn");
+    let nextBtn = document.getElementById("nextBtn");
+
+    scrollContainer.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+        scrollContainer.style.scrollBehavior = "auto";
+    });
+
+
+    nextBtn.addEventListener("click", () => {
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft += 900;
+    });
+
+    backBtn.addEventListener("click", () => {
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft -= 900;
+    });
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
